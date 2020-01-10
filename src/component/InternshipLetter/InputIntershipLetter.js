@@ -222,7 +222,22 @@ export class InputIntershipLetter extends Component {
     }
 
 
-   
+    //edit
+    /* setValue=(data)=>{
+        console.log("data is ",data)
+    this.setState({
+        salute: data.salute,
+        internName: data.internName,
+        internType:data.internType,
+        internId: data.internId,
+        companyLocation: data.companyLocation,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        // companyLocation: data.companyLocation
+    }) */
+
+    //}
+    //
 
 
 
@@ -344,7 +359,27 @@ export class InputIntershipLetter extends Component {
                                                 </div>
                                             </div>
 
-                                            
+                                            {/*  <div className="row">
+                                                <div className="col-6">
+                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
+  <input type="checkbox" value={this.state.withHeader} className="custom-control-input" onChange={(event) => {
+                                                      this.onChangeHeader(event)
+                                                    }} id="withLetterHead" />
+  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withLetterHead">With Letter Head</label>
+</div>
+
+                                                </div>
+                                                <div className="col-6">
+                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
+  <input type="checkbox" className="custom-control-input" value={this.state.withWaterMark} id="withWatermark"  onChange={(event) => {
+                                                       this.onCheckHandler(event);
+                                                    }} />
+  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withWatermark">With WaterMark</label>
+</div>
+
+                                                    </div>
+                                            </div> */}
+
 
                                             <div className=" input-group w-50 container-fluid">
                                                 <MDBBtn outline id="generate" type="submit" className=" form-control-plaintext  justify-content-center text-center" color="primary">Generate</MDBBtn>

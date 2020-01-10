@@ -119,6 +119,40 @@ export default class Cards extends Component {
                             <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">Offer Letter</h6></div>
                         </div></Link>
 
+                    <Link to='/InputHrPolicy'>
+
+                        <div className="card HomeCard" style={{ width: '12rem', cursor: "pointer", margin: '20px', height: 180 }}>
+                            <img style={{ width: '120px', marginLeft: 'auto', marginRight: 'auto', }} src={offerletter2} className="card-img-top" alt="..." />
+                            <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">HR Policy Letter</h6></div>
+                        </div></Link>
+
+                    <Link to='/InputBDPolicy'>
+
+                        <div className="card HomeCard" style={{ width: '12rem', cursor: "pointer", margin: '20px', height: 180 }}>
+                            <img style={{ width: '120px', marginLeft: 'auto', marginRight: 'auto', }} src={offerletter2} className="card-img-top" alt="..." />
+                            <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">BD Policy Letter</h6></div>
+                        </div></Link>
+
+                    <Link to='/InputConsultantOffer'>
+
+                        <div className="card HomeCard" style={{ width: '12rem', cursor: "pointer", margin: '20px', height: 180 }}>
+                            <img style={{ width: '120px', marginLeft: 'auto', marginRight: 'auto', }} src={offerletter2} className="card-img-top" alt="..." />
+                            <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">Consultant Offer Letter</h6></div>
+                        </div></Link>
+
+                    <Link to='/InputSalaryRevision'>
+
+                        <div className="card HomeCard" style={{ width: '12rem', cursor: "pointer", margin: '20px', height: 180 }}>
+                            <img style={{ width: '120px', marginLeft: 'auto', marginRight: 'auto', }} src={offerletter2} className="card-img-top" alt="..." />
+                            <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">Salary Revision Letter</h6></div>
+                        </div></Link>
+                    {/* <Link to='/InputIntentLetter'>
+
+                        <div className="card HomeCard" style={{ width: '12rem', cursor: "pointer", margin: '20px', height: 180 }}>
+                            <img style={{ width: '120px', marginLeft: 'auto', marginRight: 'auto', }} src={offerletter2} className="card-img-top" alt="..." />
+                            <div style={{ color: '#343A40' }}><h6 className="font-weight-bold">Intent Letter</h6></div>
+                        </div></Link> */}
+
                 </div>
             </div>
         );

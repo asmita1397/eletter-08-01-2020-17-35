@@ -9,6 +9,7 @@ import data from '../data.json'
 
 
 
+
 export class Login extends Component {
 
     constructor(props) {
@@ -56,6 +57,7 @@ export class Login extends Component {
         return (
             <div>
                 <SimpleNavBar/>
+                
                 <div  className="Logincenter">
                     <div className="container-fluid mt-5">
                         <div className="row">

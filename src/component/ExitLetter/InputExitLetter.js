@@ -80,7 +80,8 @@ export class InputExitLetter extends Component {
 
                 console.log("dattetaetaetaet ", this.state)
                 if (this.state.salute === "Ms." || this.state.salute === "Mrs.") {
-                    
+                    // let obj = {...this.state };
+                    // obj.gender.gender1 = "She";
                     this.setState({
                         ...this.state,
                         gender: {
@@ -333,7 +334,6 @@ export class InputExitLetter extends Component {
                                             </div>
 
                                             
-
 
                                             <div className=" input-group w-50 container-fluid">
                                                 <MDBBtn outline id="generate" type="submit" className=" form-control-plaintext  justify-content-center text-center" color="primary">Generate</MDBBtn>

@@ -36,7 +36,6 @@ background: white;
     padding-top:25mm;
     padding-bottom:15mm;
     font-family: Calibri !important;
-    position: relative;
   
 }
 #AFourFirstPage{
@@ -61,8 +60,7 @@ body {
 
 @Page {
     size:auto;
-  /* margin-top: -8.3%; */
-  margin-top: 0;
+  margin-top: -8.3%;
   margin-bottom: 0mm;
   margin-left: 0mm;
   margin-right: 0mm;
@@ -197,47 +195,3 @@ strong {
 }
 
 
-.headerimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.footerimg {
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-}
-
-.main {
-    margin-top: 0;
-}
-
-@media print{
-    .main {
-        margin-top: -8.3%;
-        color:black;
-    }
-    }
-
-    .foo {
-        counter-reset: foo;
-      }
-      .foo li {
-        list-style-type: none;
-      }
-      .foo li::before {
-        counter-increment: foo;
-        content: "1." counter(foo) " ";
-        margin-right: 20px;
-      }
-
-      .order {
-        list-style-type: none;
-      }
-      .orderspan {
-        margin-right: 20px;
-        font-size: 20px;
-      } 
