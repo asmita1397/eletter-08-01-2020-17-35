@@ -12,7 +12,7 @@ export default class Dropdown extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="dropdown">
-                            <button  className="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button onClick={()=>{localStorage.clear()}}  className="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="ty-logo">E</span><span className="dropdown"> Letter</span>
                           </button>
                             <ul className="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
@@ -20,7 +20,6 @@ export default class Dropdown extends Component {
                                     <a className="dropdown-item"  href="#">On Board</a>
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-item"><Link  tabIndex={-1} to="/InputInternship">Internship Letter</Link></li>
-                                        <li className="dropdown-item"><Link to="/InputOfferLetter" >Offer Letter</Link></li>
                                         <li className="dropdown-item"><Link to="/inputConfirmation">Confirmation Letter</Link></li>
                                         <li className="dropdown-item"><Link to="/hr">Hr Letter</Link></li>
                                         <li className="dropdown-item"><Link to="/InputIntentLetter">Intent Letter</Link></li>
@@ -34,7 +33,7 @@ export default class Dropdown extends Component {
                                         <li className="dropdown-item"><Link to="/InputDepuationLetter">Deputation Letter</Link></li>
                                         <li className="dropdown-item"><Link to="/InputDesignationLetter">Designation Letter</Link></li>
                                         <li className="dropdown-item"><Link to="/InputIncrementLetter">Increment Letter</Link></li>
-                                        <li className="dropdown-item"><Link to="/InputTrainingLetter">Training Letter</Link></li>
+                                        <li className="dropdown-item"><Link to="/InputTrainingCommitLetter">Training Letter</Link></li>
                                     </ul>
                                 </li>
                                 <li className="dropdown-divider" />

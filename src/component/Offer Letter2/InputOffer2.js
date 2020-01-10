@@ -152,7 +152,7 @@ export class InputOffer2Letter extends Component {
     }
 
     onCheckHandler = (event) => {
-        debugger;
+        ;
 
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
@@ -162,7 +162,7 @@ export class InputOffer2Letter extends Component {
             console.log("if  ==", this.state.withWaterMark)
         }
         else {
-            debugger;
+            ;
             this.setState({
                 withWaterMark: false
             })
@@ -173,7 +173,7 @@ export class InputOffer2Letter extends Component {
 
     onChangeHeader = (event) => {
 
-        debugger;
+        ;
 
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
@@ -183,7 +183,7 @@ export class InputOffer2Letter extends Component {
             console.log("if  ==", this.state.withHeader)
         }
         else {
-            debugger;
+            ;
             this.setState({
                 withHeader: false
             })

@@ -32,20 +32,18 @@ export class InputConfirmationLetter extends Component {
     }
 
     componentDidMount() {
+        let editClick = localStorage.getItem("editClick");
+        if (editClick) {
+            this.setState({
 
 
-        let editClick=localStorage.getItem("editClick");
-            if(editClick)
-            {
-                this.setState({
-                    salute: this.props.empData.salute,
-                    employeeName: this.props.empData.employeeName,
-                    employeeId: this.props.empData.employeeId,
-                    designation: this.props.empData.designation,
-                    joiningDate: this.props.empData.joiningDate
-                    
+                salute: this.props.empData.salute,
+                employeeName: this.props.empData.employeeName,
+                employeeId: this.props.empData.employeeId,
+                designation: this.props.empData.designation,
+                joiningDate: this.props.empData.joiningDate
             })
-           
+
         }
 
         const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -90,9 +88,7 @@ export class InputConfirmationLetter extends Component {
                     that.setState({ showJoiningDate: true })
                 }
 
-                /* if (ProbationEndDate === "") {
-                    that.setState({ showProbationEndDate: true })
-                } */
+
                 if (designation === "") {
                     that.setState({ showDesignation: true })
                 }
@@ -104,14 +100,7 @@ export class InputConfirmationLetter extends Component {
                     that.setState({ showEmployeeName: true })
                 }
 
-                /*  if(selectedProbationEndDate<selectedJoiningDate){
-                     that.setState({
-                         showInvalidDate:"true"
-                     })
- 
-                    return false;
-               }      
-  */
+
                 if (joiningDate != "" && designation != "" && employeeId != "" && employeeName !== "") {
                     console.log("True return")
                     return true;
@@ -134,7 +123,8 @@ export class InputConfirmationLetter extends Component {
 
 
     onCheckHandler = (event) => {
-       
+        
+
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
             this.setState({
@@ -143,7 +133,7 @@ export class InputConfirmationLetter extends Component {
             console.log("if  ==", this.state.withWaterMark)
         }
         else {
-          
+           
             this.setState({
                 withWaterMark: false
             })
@@ -154,7 +144,7 @@ export class InputConfirmationLetter extends Component {
 
     onChangeHeader = (event) => {
 
-        debugger;
+       
 
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
@@ -164,7 +154,7 @@ export class InputConfirmationLetter extends Component {
             console.log("if  ==", this.state.withHeader)
         }
         else {
-            debugger;
+           
             this.setState({
                 withHeader: false
             })
@@ -210,22 +200,10 @@ export class InputConfirmationLetter extends Component {
     }
 
 
-    //edit
-    setValue = (data) => {
-        console.log("data is ", data)
-        this.setState({
-            salute: data.salute,
-            employeeName: data.employeeName,
-            employeeId: data.employeeId,
-            designation: data.designation,
-            joiningDate: data.joiningDate
-        })
-    }
-    //
 
 
     render() {
-        
+
         return (
             <div>
                 <Home buttonShow={false} />
@@ -274,15 +252,12 @@ export class InputConfirmationLetter extends Component {
 
                                             </div>
                                             <div className="row" style={{ padding: 0 }}>
-                                                <div className="col-6 p-0" >
+                                                <div className="col-12 p-0" >
                                                     {this.state.showJoiningDate ? <div id="errordiv" className="container-fluid">Please fill out JoiningDate field * </div> : null}
 
 
                                                 </div>
-                                                <div className="col-6 p-0" style={{ width: 0 }}>
-                                                    {/*   {this.state.showProbationEndDate ? <div id="errordiv" className="container-fluid">Please fill out ProbationEndDate field * </div> : null}
-                                                    {this.state.showInvalidDate ? <div id="errordiv" className="container-fluid">ProbationEndDate equal or greater than Today's date * </div> : null} */}
-                                                </div>
+
                                             </div>
 
                                             <div class="row">
@@ -299,26 +274,6 @@ export class InputConfirmationLetter extends Component {
                                             </div>
                                             {this.state.showDesignation ? <div id="errordiv" className="container-fluid p-0">Please fill out Designation field * </div> : null}
 
-                                            {/* <div className="row">
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" value={this.state.withHeader} className="custom-control-input" onChange={(event) => {
-                                                       this.onChangeHeader(event)
-                                                    }} id="withLetterHead" />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withLetterHead">With Letter Head</label>
-</div>
-
-                                                </div>
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" value={this.state.withWaterMark} className="custom-control-input" id="withWatermark"  onChange={(event) => {
-                                                          this.onCheckHandler(event)
-                                                    }} />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withWatermark">With WaterMark</label>
-</div>
-
-                                                    </div>
-                                            </div> */}
 
 
                                             <div className=" input-group w-50 container-fluid">

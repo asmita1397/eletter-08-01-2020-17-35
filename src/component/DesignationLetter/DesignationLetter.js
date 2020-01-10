@@ -34,47 +34,47 @@ export class DesignationLetter extends Component {
         this.setState({
             employee: this.props.empData,
         })
-       
-        let that=this;
+
+        let that = this;
         var mediaQueryList = window.matchMedia('print');
-    
-        mediaQueryList.addListener(function(mql) {
-          if (mql.matches) {
-              console.log('before print dialog open');
-          } else {
-              console.log('after print dialog closed');
-              that.setState({
-                  pix:false
-             })
-          }
-      });
-    
+
+        mediaQueryList.addListener(function (mql) {
+            if (mql.matches) {
+                console.log('before print dialog open');
+            } else {
+                console.log('after print dialog closed');
+                that.setState({
+                    pix: false
+                })
+            }
+        });
+
     }
 
-    print=(data)=>{
-        debugger;
-        console.log("pix value ",this.state.pix)
-        if(this.state.employee.withHeader){
-          this.setState({
-             pix:true
-          },()=>   setTimeout(() => {
-            window.print()
-          },550)
-          )
-        }else{
-          window.print()
-        }
+    print = (data) => {
        
-      }
+        console.log("pix value ", this.state.pix)
+        if (this.state.employee.withHeader) {
+            this.setState({
+                pix: true
+            }, () => setTimeout(() => {
+                window.print()
+            }, 550)
+            )
+        } else {
+            window.print()
+        }
+
+    }
 
 
-      //edit
-  sendData(){
-    this.props.sendData(this.state.employee);
-    this.props.history.push('InputDesignationLetter');
+    //edit
+    sendData() {
+        this.props.sendData(this.state.employee);
+        this.props.history.push('InputDesignationLetter');
 
-  }
-  
+    }
+
     render() {
 
         let toDate = new Date();
@@ -85,63 +85,73 @@ export class DesignationLetter extends Component {
         if (this.props.empData) {
             return (
                 <div>
-                     <Home buttonShow={true} showWatermark={(data)=>this.setState({waterMark:data})} sendData={()=>this.sendData()} setHeader={(data)=>this.print()} />
-                    <div className="card" style={{ marginTop: '100px' }} id="AFourPage">
-                        <div className="card-body pb-0 mt-5">
+                    <Home buttonShow={true} showWatermark={(data) => this.setState({ waterMark: data })} sendData={() => this.sendData()} setHeader={(data) => this.print()} />
+                    <div className="main">
+                        <div className="card" style={{ marginTop: '100px' }} id="AFourPage">
+                            <div className="card-body pb-0">
 
-                            {this.state.waterMark ? <header className="header" style={{ marginLeft: '-115px', marginTop: '-100px' }}>
+                                <div>
 
-                                <img className="tyHeader" src={TyHeader}></img>
+                                    {this.state.waterMark ? <header className="headerimg" >
 
-                            </header> : null}
+                                        <img style={{
+                                            width: '1172px',
+                                            height: '95px'
+                                        }} src={TyHeader}></img>
+
+                                    </header> : null}
+
+                                    {this.state.waterMark ? <div className="waterMark">
+                                        <span style={{
+                                            color: '#263248', fontSize: '91px',
+                                            fontFamily: 'sans-serif', position: 'absolute', opacity: '0.3', zIndex: '0'
+                                        }}>TES<span style={{
+                                            color: '#F8981C', fontSize: '91px',
+                                            fontFamily: 'sans-serif', fontWeight: "600"
+                                        }}>TY</span>ANTRA</span>
+                                    </div> : null}
 
 
-                            {this.state.waterMark ? <div className="waterMark">
-                                <span style={{
-                                    color: '#263248', fontSize: '91px',
-                                    fontFamily: 'sans-serif', position: 'absolute', opacity: '0.3', zIndex: '0'
-                                }}>TES<span style={{
-                                    color: '#F8981C', fontSize: '91px',
-                                    fontFamily: 'sans-serif', fontWeight: "600"
-                                }}>TY</span>ANTRA</span>
-                            </div> : null}
+                                    <div>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}><strong></strong><strong> {toDate.getDate()}<sup>{this.nth(toDate.getDate())}</sup>&nbsp;{moment(toDate).format('MMMM YYYY')}</strong></p>
+                                        <br />
+                                        <br />
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}>To,</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}><strong> {this.state.employee.employeeName}</strong>,</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}> {this.state.employee.employeeId}</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>Dear <strong> {this.state.employee.employeeName}</strong>,</p>
+                                        <br />
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>We are pleased to inform; your designation has been changed as <strong> {this.state.employee.newDesignation} </strong>effective <strong>{toDate.getDate()}<sup>{this.nth(toDate.getDate())}</sup>&nbsp;{moment(toDate).format('MMMM YYYY')}</strong>. Other terms and conditions remain the same as per the appointment letter.</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>Kindly sign and return the duplicate of this letter as a token of your acceptance of the above terms and conditions.</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>With best wishes,</p>
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0, fontWeight: 'bolder' }}>Authorized Signatory</p>
+                                       
+                                        <br />
+                                    </div>
 
+                                </div>
+                                {this.state.waterMark ? <div className="footerimg" >
 
-                            <div>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}><strong></strong><strong> {toDate.getDate()}<sup>{this.nth(toDate.getDate())}</sup>&nbsp;{moment(toDate).format('MMMM YYYY')}</strong></p>
-                                <br />
-                                <br />
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}>To,</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}><strong> {this.state.employee.employeeName}</strong>,</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0 }}> {this.state.employee.employeeId}</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>Dear <strong> {this.state.employee.employeeName}</strong>,</p>
-                                <br />
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>We are pleased to inform; your designation has been changed as <strong> {this.state.employee.newDesignation} </strong>effective <strong>{toDate.getDate()}<sup>{this.nth(toDate.getDate())}</sup>&nbsp;{moment(toDate).format('MMMM YYYY')}</strong>. Other terms and conditions remain the same as per the appointment letter.</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>Kindly sign and return the duplicate of this letter as a token of your acceptance of the above terms and conditions.</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>&nbsp;</p>
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20 }}>With best wishes,</p>
-                                <br />
-                                <br />
-                                <br />
-                                <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, margin: 0, fontWeight: 'bolder' }}>Authorized Signatory</p>
-                                {/* <p style={{ textAlign: 'justify', paddingLeft: 20, paddingRight: 20, fontWeight: 'bolder' }}>(Human Resources)</p> */}
-                                <br />
+                                    <img style={{
+                                        width: '1172px',
+                                        height: '95px'
+                                    }} src={TyFooter}></img>
+
+                                </div> : null}
+
                             </div>
 
                         </div>
-                        {this.state.waterMark ? <div className="footer" style={{ marginLeft: '-141px', marginTop: '506px' }}>
-
-                            <img className="tyfooter" style={{ marginLeft: '48px' }} src={TyFooter}></img>
-
-                        </div> : null}
-
                     </div>
-
                 </div>
 
             )

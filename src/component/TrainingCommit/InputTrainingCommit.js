@@ -74,7 +74,7 @@ export class InputTrainingCommitLetter extends Component {
         var that = this;
         $(document).ready(() => {
             $('#generate').click((e) => {
-                debugger
+                
                 const monthNames = ["January", "February", "March", "April", "May", "June",
                     "July", "August", "September", "October", "November", "December"
                 ];
@@ -179,7 +179,7 @@ export class InputTrainingCommitLetter extends Component {
 
 
     onCheckHandler = (event) => {
-        debugger;
+        ;
 
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
@@ -189,7 +189,7 @@ export class InputTrainingCommitLetter extends Component {
             console.log("if  ==", this.state.withWaterMark)
         }
         else {
-            debugger;
+            ;
             this.setState({
                 withWaterMark: false
             })
@@ -200,7 +200,7 @@ export class InputTrainingCommitLetter extends Component {
 
     onChangeHeader = (event) => {
 
-        debugger;
+        ;
 
         console.log("Checkbox value ==", event.target.value)
         if (event.target.value == 'false') {
@@ -210,7 +210,7 @@ export class InputTrainingCommitLetter extends Component {
             console.log("if  ==", this.state.withHeader)
         }
         else {
-            debugger;
+            ;
             this.setState({
                 withHeader: false
             })
@@ -437,26 +437,7 @@ export class InputTrainingCommitLetter extends Component {
                                                 </div>
                                             </div>
 
-                                            {/* <div className="row">
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" value={this.state.withHeader} className="custom-control-input" onChange={(event) => {
-                                                        this.onChangeHeader(event)
-                                                    }} id="withLetterHead" />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withLetterHead">With Letter Head</label>
-</div>
-
-                                                </div>
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" className="custom-control-input" value={this.state.withWaterMark} id="withWatermark"  onChange={(event) => {
-                                                       this.onCheckHandler(event);
-                                                    }} />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withWatermark">With WaterMark</label>
-</div>
-
-                                                    </div>
-                                            </div> */}
+                                           
 
                                             <div className=" input-group w-50 container-fluid">
                                                 <MDBBtn outline id="generate" type="submit" className=" form-control-plaintext  justify-content-center text-center" color="primary">Generate</MDBBtn>

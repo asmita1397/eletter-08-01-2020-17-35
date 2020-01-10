@@ -134,7 +134,7 @@ export class InputRelivingLetter extends Component {
 
 
     onCheckHandler=(event)=>{
-        debugger;
+        ;
 
          console.log("Checkbox value ==",event.target.value)
        if(event.target.value=='false'){
@@ -144,7 +144,7 @@ export class InputRelivingLetter extends Component {
            console.log("if  ==",this.state.withWaterMark)
        }
        else{
-           debugger;
+           ;
            this.setState({
                withWaterMark: false
            })
@@ -155,7 +155,7 @@ export class InputRelivingLetter extends Component {
 
     onChangeHeader=(event)=>{
 
-        debugger;
+        ;
 
         console.log("Checkbox value ==",event.target.value)
       if(event.target.value=='false'){
@@ -165,7 +165,7 @@ export class InputRelivingLetter extends Component {
           console.log("if  ==",this.state.withHeader)
       }
       else{
-          debugger;
+          ;
           this.setState({
               withHeader: false
           })
@@ -326,26 +326,7 @@ export class InputRelivingLetter extends Component {
                                             </div>
 
                                             
-                                            {/* <div className="row">
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" value={this.state.withHeader} className="custom-control-input" onChange={(event) => {
-                                                       this.onChangeHeader(event)
-                                                    }} id="withLetterHead" />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withLetterHead">With Letter Head</label>
-</div>
-
-                                                </div>
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" className="custom-control-input" value={this.state.withWaterMark} id="withWatermark"  onChange={(event) => {
-                                                         this.onCheckHandler(event)
-                                                    }} />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withWatermark">With WaterMark</label>
-</div>
-
-                                                    </div>
-                                            </div> */}
+                                           
  
 
                                             <div className=" input-group w-50 container-fluid">

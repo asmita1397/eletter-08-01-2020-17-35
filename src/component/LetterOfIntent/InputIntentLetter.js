@@ -33,6 +33,22 @@ export default class InputIntentLetter extends Component {
     }
 
     componentDidMount() {
+
+        let editClick = localStorage.getItem("editClick");
+        if (editClick) {
+            this.setState({
+
+                
+                employeeName: this.props.empData.employeeName,
+                designation: this.props.empData.designation,
+                companyLocation: this.props.empData.companyLocation,
+                reportingManager: this.props.empData.reportingManager,
+                joiningDate: this.props.empData.joiningDate,
+                trainingStartDate: this.props.empData.trainingStartDate
+            })
+
+        }
+
         var that = this;
         $(document).ready(function () {
             $('#genrate').click(function (e) {
@@ -61,13 +77,6 @@ export default class InputIntentLetter extends Component {
                     that.setState({ showEmployeeName: true })
                 }
 
-                /*  if(selectedDate<TodaysDate){
-                     that.setState({
-                         showInvalidDate:"true"
-                     })
- 
-                    return false;
-               }    */
 
                 if (designation != "" && companyLocation != "" && employeeName != "" && reportingManager !== "" && trainingStartDate != '') {
                     console.log("True return")
@@ -84,7 +93,7 @@ export default class InputIntentLetter extends Component {
 
     pass = (event) => {
         event.preventDefault();
-        console.log("data========", this.state)
+        console.log("this.props.empData========", this.state)
 
         this.props.clicked(this.state)
         this.props.history.push('/IntentLetter')
@@ -133,7 +142,7 @@ export default class InputIntentLetter extends Component {
     }
 
     onCheckHandler=(event)=>{
-        debugger;
+        ;
 
          console.log("Checkbox value ==",event.target.value)
        if(event.target.value=='false'){
@@ -143,7 +152,7 @@ export default class InputIntentLetter extends Component {
            console.log("if  ==",this.state.withWaterMark)
        }
        else{
-           debugger;
+           ;
            this.setState({
                withWaterMark: false
            })
@@ -153,7 +162,7 @@ export default class InputIntentLetter extends Component {
     }
     onChangeHeader=(event)=>{
 
-        debugger;
+        ;
 
         console.log("Checkbox value ==",event.target.value)
       if(event.target.value=='false'){
@@ -163,7 +172,7 @@ export default class InputIntentLetter extends Component {
           console.log("if  ==",this.state.withHeader)
       }
       else{
-          debugger;
+          ;
           this.setState({
               withHeader: false
           })
@@ -176,7 +185,7 @@ export default class InputIntentLetter extends Component {
      
      onChangeHeader=(event)=>{
 
-        debugger;
+        ;
 
         console.log("Checkbox value ==",event.target.value)
       if(event.target.value=='false'){
@@ -186,7 +195,7 @@ export default class InputIntentLetter extends Component {
           console.log("if  ==",this.state.withHeader)
       }
       else{
-          debugger;
+          ;
           this.setState({
               withHeader: false
           })
@@ -197,28 +206,13 @@ export default class InputIntentLetter extends Component {
 
      }
 
-       //edit
-setValue=(data)=>{
-    console.log("data is ",data)
-this.setState({
-    employeeName: data.employeeName,
-    designation: data.designation,
-    companyLocation: data.companyLocation,
-    reportingManager: data.reportingManager,
-    joiningDate: data.joiningDate,
-    trainingStartDate: data.trainingStartDate
-})
-
-}
-//
+  
 
 
 
 
     render() {
-        if(this.props.getData!==''){
-            this.setValue(this.props.getData)
-        }
+       
         return (
             <div>
                 <div>
@@ -307,27 +301,7 @@ this.setState({
 
                                                 </div>
                                                
-                                                {/* <div className="row">
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" value={this.state.withHeader} className="custom-control-input" onChange={(event) => {
-                                                        this.onChangeHeader(event)
-                                                    }} id="withLetterHead" />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withLetterHead">With Letter Head</label>
-</div>
-
-                                                </div>
-                                                <div className="col-6">
-                                                <div className="custom-control custom-checkbox custom-control-inline col-6">
-  <input type="checkbox" className="custom-control-input" value={this.state.withWaterMark} id="withWatermark"  onChange={(event) => {
-                                                       this.onCheckHandler(event) 
-                                                    }} />
-  <label style={{whiteSpace: 'nowrap'}} className="custom-control-label" htmlFor="withWatermark">With WaterMark</label>
-</div>
-
-                                                    </div>
-                                            </div> */}
-
+                                               
 
 
 

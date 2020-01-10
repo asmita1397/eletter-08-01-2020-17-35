@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 import InputHRLetter from './component/HrLetter/InputHRLetter';
 import Cards from './component/Cards';
 import HRLetter from './component/HrLetter/HRLetter';
-import Test from './component/IncrementLetter/test';
+
 import InputConfirmationLetter from './component/ConfirmationLetter/InputConfirmationLetter';
 import ConfirmationLetter from './component/ConfirmationLetter/ConfirmationLetter';
 import InputCertificateLetter from './component/CertificateLetter/InputCertificateLetter';
@@ -16,17 +16,15 @@ import InputIncrementLetter from './component/IncrementLetter/InputIncrementLett
 import IncrementLetter from './component/IncrementLetter/IncrementLetter';
 import InputDesignationLetter from './component/DesignationLetter/InputDesignationLetter';
 import DesignationLetter from './component/DesignationLetter/DesignationLetter';
-import InputOfferLetter from './component/OfferLetters/InputOfferLetter';
-import OfferLetter from './component/OfferLetters/OfferLetter';
 import InputRelivingLetter from './component/RelivingLetter/InputRelivingLetter';
 import RelivingLetter from './component/RelivingLetter/RelivingLetter';
 import InputExitLetter from './component/ExitLetter/InputExitLetter';
 import ExitLetter from './component/ExitLetter/ExitLetter';
 import Login from './component/Login/Login';
-import { TrainingLetter } from './component/TrainingLetter/TrainingLetter';
+
 import TrainingCommit from './component/TrainingCommit/TrainingCommit';
 import { InputTrainingCommitLetter } from './component/TrainingCommit/InputTrainingCommit';
-import { InputTrainingLetter } from './component/TrainingLetter/InputTrainingLetter';
+
 import { InternshipLetter } from './component/InternshipLetter/InternshipLetter';
 import { InputIntershipLetter } from './component/InternshipLetter/InputIntershipLetter';
 import Dropdown from './component/dropdown';
@@ -39,14 +37,6 @@ import MailComponent from './component/Email/MailComponent';
 import Form from './component/Form1';
 import Form1 from './component/Form1';
 import Temp from './component/HrLetter/Temp';
-import { InputHrPolicy } from './component/HrPolicy/InputHrPolicy';
-import { HrPolicy } from './component/HrPolicy/HrPolicy';
-import { InputBDPolicy } from './component/BDPolicy/InputBDPolicy';
-import { BDPolicy } from './component/BDPolicy/BDPolicy';
-import { ConsultantOffer } from './component/ConsultantOffer/ConsultantOffer';
-import { InputConsultantOffer } from './component/ConsultantOffer/InputConsultantOffer';
-import { InputSalaryRevision } from './component/SalaryRevision/InputSalaryRevision';
-import { SalaryRevision } from './component/SalaryRevision/SalaryRevision';
 
 export class App extends Component{
   
@@ -76,30 +66,12 @@ export class App extends Component{
              
           }
         
-          
-//  emp=(data)=>{
-//   console.log("==============",data)
-//   this.setState({
-//     emp :data
-//   },()=>this.props.history.push("/TrainingCommit"))
-  
-// }
-
-// emp2=(data)=>{
-//   console.log("==============",data)
-//   this.setState({
-//     emp :data
-//   },()=>this.props.history.push("/TrainingLetter"))
-  
-// }
  
 
     render(){
   return (
-    
 
     <div className="App">
-
 
       <Route exact path='/' component={Login}></Route>
 
@@ -124,8 +96,6 @@ export class App extends Component{
       <Route exact path='/InputIncrementLetter' render={() => { return <InputIncrementLetter empData={this.state.emp} clicked={this.employee.bind()} /> }}></Route>
       <Route exact path='/IncrementLetter'  render={() => { return <IncrementLetter  empData={this.state.emp} /> }}></Route>
 
-      <Route exact path='/InputOfferLetter'  render={() => { return <InputOfferLetter empData={this.state.emp} clicked={this.employee.bind()} /> }} ></Route>
-      <Route exact path='/OfferLetter' render={() => { return <OfferLetter  empData={this.state.emp} /> }}></Route>
    
       <Route exact path='/InputRelivingLetter'  render={() => { return <InputRelivingLetter empData={this.state.emp} clicked={this.employee.bind()} /> }} ></Route>
       <Route exact path='/RelivingLetter' render={() => { return <RelivingLetter  empData={this.state.emp} /> }}></Route>
@@ -148,20 +118,6 @@ export class App extends Component{
       <Route exact path='/IntentLetter'  render={() => { return <Intent  history={this.props.history} empData={this.state.emp} /> }} ></Route>
 
 
-      <Route exact path='/InputHrPolicy' render={() => { return <InputHrPolicy empData={this.state.emp} history={this.props.history} clicked={this.employee.bind()} /> }} ></Route>
-      <Route exact path='/HrPolicy'  render={() => { return <HrPolicy  history={this.props.history} empData={this.state.emp} /> }} ></Route>
-
-
-      <Route exact path='/InputBDPolicy' render={() => { return <InputBDPolicy empData={this.state.emp} history={this.props.history} clicked={this.employee.bind()} /> }} ></Route>
-      <Route exact path='/BDPolicy'  render={() => { return <BDPolicy  history={this.props.history} empData={this.state.emp} /> }} ></Route>
-
-
-      <Route exact path='/InputConsultantOffer' render={() => { return <InputConsultantOffer empData={this.state.emp} history={this.props.history} clicked={this.employee.bind()} /> }} ></Route>
-      <Route exact path='/ConsultantOffer'  render={() => { return <ConsultantOffer  history={this.props.history} empData={this.state.emp} /> }} ></Route>
-
-      <Route exact path='/InputSalaryRevision' render={() => { return <InputSalaryRevision empData={this.state.emp} history={this.props.history} clicked={this.employee.bind()} /> }} ></Route>
-      <Route exact path='/SalaryRevision'  render={() => { return <SalaryRevision  history={this.props.history} empData={this.state.emp} /> }} ></Route>
-
      <Route exact path='/withWaterMark' render={() => { return <Example  showWatermark={this.showWatermark.bind()} /> }} ></Route>
      
      
@@ -171,7 +127,7 @@ export class App extends Component{
 
       <Route exact path='/test' component={Temp}></Route>
 
-    
+     
     </div>
   );
 }
